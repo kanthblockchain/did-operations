@@ -52,7 +52,7 @@ const didOpsController = {
             .json(jsonData);
     },
 
-    generateJWTWithClaim : async(request,response) {
+    generateJWTWithClaim : async(request,response) => {
         const address = request.params.address;
         const body = req.body;
         const did = req.did;
@@ -72,8 +72,22 @@ const didOpsController = {
             .json(jsonData);
     },
 
-    query : async () => {
+    query : async (request,response) => {
         const accounts = await didOpsService.queryAccounts();
+        let statusCode = 200;
+        let jsonData = null;
+        if (accounts) {
+            jsonData = accounts;
+        }else{
+           statusCode =  500;
+        }
+         response
+            .status(statusCode)
+            .json(jsonData);
+    },
+
+    balance : async (request,response) => {
+        const accounts = await didOpsService.balance(request.params.address);
         let statusCode = 200;
         let jsonData = null;
         if (accounts) {

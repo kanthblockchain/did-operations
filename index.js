@@ -23,6 +23,8 @@ const logger = require('./src/constants/logger');
 
 const cors = require('cors');
 const didOpsRoutes = require('./src/routes/DidOpsRouter');
+const accountRoutes = require('./src/routes/AccountRouter');
+
     app
     .use(function (req, res, next) {
     // Website you wish to allow to connect
@@ -40,7 +42,7 @@ const didOpsRoutes = require('./src/routes/DidOpsRouter');
     logger.info('received request');
     // Pass to next layer of middleware
     next();
-}).use("/", didOpsRoutes)
+}).use("/did", didOpsRoutes).use("/account",accountRoutes)
 .use(function (req, res) {
     return res.status(404).send({message: 'Route' + req.url + ' Not found.'});
 })

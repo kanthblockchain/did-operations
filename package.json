@@ -23,6 +23,7 @@
     "ethr-did-resolver": "^2.2.0",
     "express": "^4.16.4",
     "nodemon": "^2.0.4",
+    "truffle-hdwallet-provider": "^1.0.17",
     "web3": "^2.0.0-alpha.1",
     "winston": "^3.2.1"
   }
