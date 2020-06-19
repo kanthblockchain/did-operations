@@ -1,13 +1,13 @@
 # did-ops
 
-<Details>
-Ethereum DID Registry Details
-<Summary>
+## Ethereum DID Registry Details
+
 ```
 DIDs' are registered , stored in smart contract called ethr-did-registry
 address for contract on ropsten is: 
 https://ropsten.etherscan.io/address/0xdca7ef03e98e0dc2b855be647c39abe984fcf21b
 ```
+
 ```
 for further details on ethr-did-registry smartcontract, refer:
 https://github.com/uport-project/ethr-did-registry
@@ -42,6 +42,3 @@ let networkId = 1 // Mainnet
 let DidReg = web3.eth.contract(DidRegistryContract.abi)
 let didReg = DidReg.at(DidRegistryContract.networks[networkId].address)
 ```
-
-</Summary>
-</Details>
