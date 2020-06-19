@@ -1,5 +1,28 @@
 # did-ops
 
+## Developer SDK for Uport: 
+
+```js
+https://developer.uport.me/
+```
+
+## Onboarding new users from Dapp on to Uport:
+
+- Connect Users to Your web3 dApp
+
+- Add full support for uPort by adding a single line of code to your web3 dApp.
+
+    1. Onboard new users within minutes
+    2. Instantly create a privacy-preserving Ethereum account
+    3. Build for both desktop and mobile browsers
+
+## Issue & Request Verified Credentials
+
+ - Help your users build their digital identity by issuing Verified Credentials about them or the things they do in your app.
+
+    1. Request Ethereum transaction signing with web3
+    2. Issue and Request Verified Credentials about your users
+
 ## Ethereum DID Registry Details
 
 ```
