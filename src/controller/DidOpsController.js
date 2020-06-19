@@ -71,35 +71,6 @@ const didOpsController = {
             .status(statusCode)
             .json(jsonData);
     },
-
-    query : async (request,response) => {
-        const accounts = await didOpsService.queryAccounts();
-        let statusCode = 200;
-        let jsonData = null;
-        if (accounts) {
-            jsonData = accounts;
-        }else{
-           statusCode =  500;
-        }
-         response
-            .status(statusCode)
-            .json(jsonData);
-    },
-
-    balance : async (request,response) => {
-        const accounts = await didOpsService.balance(request.params.address);
-        let statusCode = 200;
-        let jsonData = null;
-        if (accounts) {
-            jsonData = accounts;
-        }else{
-           statusCode =  500;
-        }
-         response
-            .status(statusCode)
-            .json(jsonData);
-    }
-
 } 
 
 module.exports = didOpsController;

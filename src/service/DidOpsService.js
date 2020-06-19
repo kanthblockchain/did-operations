@@ -12,6 +12,9 @@ const infura = process.env.INFURA;
 const mnemonic = process.env.MNEMONIC;
 const HDWalletProvider = require("truffle-hdwallet-provider");
 const provider = new HDWalletProvider( mnemonic, infura );
+const didRegistryAddress = process.env.DID_REGISTRY_ADDRESS;
+const didPubKey= process.env.DID_PUB_KEY;
+const didPvtKey= process.env.DID_PVT_KEY;
 
 const didOpsService  = {
 
@@ -20,20 +23,10 @@ const didOpsService  = {
        return {"did": keyPair.address};
     },
 
-    queryAccounts : async () =>{ 
-        Web3.providers.HttpProvider.prototype.sendAsync = Web3.providers.HttpProvider.prototype.send
-        let web3 = new Web3(provider);
-        const accounts = await web3.eth.getAccounts();
-        logger.info('accounts is: '+JSON.stringify(accounts));
-        return accounts;
-    },
+    registerDid : async (did, pvtKey, claims) => {
 
-    balance : async (address) =>{ 
-        Web3.providers.HttpProvider.prototype.sendAsync = Web3.providers.HttpProvider.prototype.send
-        let web3 = new Web3(provider);
-        const accountBalance = await web3.eth.getBalance(address);
-        logger.info('accountBalance is: '+accountBalance);
-        return accountBalance;
+
+
     },
 
     generateJWTWithClaim : async (did, pvtKey, claims) => {
@@ -46,10 +39,6 @@ const didOpsService  = {
         return jwt;
     },
 
-    registerDid : async (did, pvtKey, claims) => {
-
-
-    }
 };
 
 module.exports = didOpsService;
