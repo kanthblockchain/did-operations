@@ -28,8 +28,7 @@ https://developer.uport.me/
 
 
 <Details>
-Construct a New Identity
-<Summary>
+
 https://developer.uport.me/ethr-did/docs/guides/index#construct-a-new-identity
 
 
@@ -51,6 +50,8 @@ const keypair = EthrDID.createKeyPair()
 
 const ethrDid = new EthrDID({...keypair, provider})
 ```
+<Summary>
+Construct a New Identity
 </Summary>
 </Details>
 
