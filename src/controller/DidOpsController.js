@@ -3,10 +3,10 @@ const logger = require('../constants/logger');
 
 const didOpsController = {
     createDid : async (request,response) =>{ 
-        let responseData = await didOpsService.createDid();
+        let responseData = await didOpsService.createDidFromAddress();
         let statusCode = 200;
         let jsonData = null;
-        logger.info(`response for keyPair: ${responseData}`);
+        logger.info(`response for keyPair: ${JSON.stringify(responseData)}`);
         if (responseData) {
             jsonData = responseData;
         }else{

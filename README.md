@@ -50,6 +50,14 @@ const keypair = EthrDID.createKeyPair()
 
 const ethrDid = new EthrDID({...keypair, provider})
 ```
+
+```
+refer: https://github.com/uport-project/ethr-did/blob/develop/src/index.js
+for all functions to create DID from a defaultAddress 
+  OR
+from a brand new KeyPair generated in constructor of EthrDID
+```
+
 <Summary>
 Construct a New Identity
 </Summary>
@@ -81,9 +89,9 @@ https://github.com/uport-project/ethr-did-registry
 </Details>
 
 <Details>
+
 ```
 The DID Registry can be used from JavaScript as well as directly from other contracts.
-
 To use the contract, we provide truffle artifacts.
 Once you require the Ethr-DID-Registry module, you will get an object containing the JSON.
 ```

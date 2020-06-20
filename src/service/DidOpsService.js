@@ -18,11 +18,28 @@ const didPvtKey= process.env.DID_PVT_KEY;
 
 const didOpsService  = {
 
-     createDid : async () =>{ 
+     createDidFromNewKeyPair : async () =>{ 
        const keyPair = DidUtils.createDid();
-       return {"did": keyPair.address};
+       const ethrDid = new EthrDID({...keyPair, provider});
+       logger.info(`ethrDid created -> signer: ${ethrDid.signer}`);
+       return { 
+                "address": ethrDid.address,
+                "privateKey" : keyPair.privateKey,
+                "did": ethrDid.did
+            };
     },
 
+    createDidFromAddress : async () =>{ 
+        const keyPair = {"privateKey": didPvtKey, "address": didPubKey }
+        const ethrDid = new EthrDID({...keyPair, provider});
+        logger.info(`ethrDid created -> signer: ${ethrDid.signer}`);
+        return { 
+                 "address": ethrDid.address,
+                 "privateKey" : keyPair.privateKey,
+                 "did": ethrDid.did
+             };
+     },
+ 
     registerDid : async (did, pvtKey, claims) => {
 
 
