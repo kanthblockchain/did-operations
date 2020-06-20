@@ -23,6 +23,37 @@ https://developer.uport.me/
     1. Request Ethereum transaction signing with web3
     2. Issue and Request Verified Credentials about your users
 
+
+## Features:
+
+
+<Details>
+Construct a New Identity
+<Summary>
+https://developer.uport.me/ethr-did/docs/guides/index#construct-a-new-identity
+
+
+Creating an Ethr-DID is analogous to creating an Ethereum account, 
+which is an address on the Ethereum blockchain controlled by a key pair.
+ Your Ethr-DID will be your key pair.
+
+We provide a convenient method to easily create one 
+
+```js
+EthrDID.createKeyPair() 
+```
+
+which returns an object containing an Ethereum address and private key.
+
+```js
+const keypair = EthrDID.createKeyPair()
+// Save keypair somewhere safe
+
+const ethrDid = new EthrDID({...keypair, provider})
+```
+</Summary>
+</Details>
+
 ## Ethereum DID Registry Details
 
 ```
@@ -71,3 +102,4 @@ let networkId = 1 // Mainnet
 let DidReg = web3.eth.contract(DidRegistryContract.abi)
 let didReg = DidReg.at(DidRegistryContract.networks[networkId].address)
 ```
+
