@@ -57,6 +57,7 @@ Construct a New Identity
 
 ## Ethereum DID Registry Details
 
+<Details>
 ```
 DIDs' are registered , stored in smart contract called ethr-did-registry
 address for contract on ropsten is: 
@@ -74,8 +75,12 @@ for further details on ethr-did-registry smartcontract, refer:
 https://github.com/uport-project/ethr-did-registry
 ```
 
-- Using the Registry
+<Summary>
+  Ethereum DID Registry Details
+</Summary>
+</Details>
 
+<Details>
 ```
 The DID Registry can be used from JavaScript as well as directly from other contracts.
 
@@ -103,4 +108,9 @@ let networkId = 1 // Mainnet
 let DidReg = web3.eth.contract(DidRegistryContract.abi)
 let didReg = DidReg.at(DidRegistryContract.networks[networkId].address)
 ```
+<Summary>
+Using the Registry
+</Summary>
+</Details>
+
 
