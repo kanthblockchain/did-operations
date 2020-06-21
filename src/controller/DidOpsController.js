@@ -17,9 +17,10 @@ const didOpsController = {
             .json(jsonData);
     },
 
-    registerDid : async (request, response) => {
-        const address = request.params.address;
-        let responseData = await didOpsService.registerDid(address);
+    registerClaimWithDid : async (request, response) => {
+        const did = request.body.did;
+        const claims = request.body.claims;
+        let responseData = await didOpsService.registerClaimWithDid(did, claims);
         let statusCode = 200;
         let jsonData = null;
         if (responseData) {
